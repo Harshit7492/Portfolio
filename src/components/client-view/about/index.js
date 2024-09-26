@@ -35,7 +35,7 @@ const skillItemVariant = {
 
 // Main component definition
 export default function ClientAboutView({ data }) {
-  console.log(data, "aboutdata"); // Logging data for debugging
+  // console.log(data, "aboutdata"); // Logging data for debugging
 
   // Use useMemo to memoize the animation variants
   const setVariants = useMemo(() => variants(), []);

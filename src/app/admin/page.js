@@ -181,7 +181,7 @@ export default function AdminView() {
     const response = update
       ? await updateData(currentSelectedTab, dataMap[currentSelectedTab])
       : await addData(currentSelectedTab, dataMap[currentSelectedTab]);
-    console.log(response, "response");
+    // console.log(response, "response");
 
     if (response.success) {
       resetFormDatas();
@@ -208,7 +208,7 @@ export default function AdminView() {
   async function handleLogin() {
     const res = await login(loginFormData);
 
-    console.log(res, "login");
+    alert(res, "login");
 
     if (res?.success) {
       setAuthUser(true);

@@ -15,7 +15,7 @@ async function extractAllDatas(currentSection) {
   });
 
   const data = await res.json();
-
+  
   return data && data.data;
 }
 
@@ -29,18 +29,17 @@ export default async function Home() {
   return (
     <div>
       <ClientHomeView data={homeSectionData} />
-      
-       <ClientExperienceAndEducationView
+      <ClientExperienceAndEducationView
         educationData={educationSectionData}
         experienceData={experienceSectionData}
-      />  
-       <ClientProjectView data={projectSectionData} />
-       <ClientContactView /> 
-       <footer className="footer footer-center bg-green-200 text-base-content p-4">
-  <aside>
-    <p className="font-bold text-center">Copyright © {new Date().getFullYear()} - Harshit Singh. All rights reserved</p>
-  </aside>
-</footer> 
+      />
+      <ClientProjectView data={projectSectionData} />
+      <ClientContactView />
+      <footer className="footer footer-center bg-green-200 text-base-content p-4">
+        <aside>
+          <p className="font-bold text-center">Copyright © {new Date().getFullYear()} - Harshit Singh. All rights reserved</p>
+        </aside>
+      </footer>
     </div>
   );
 }

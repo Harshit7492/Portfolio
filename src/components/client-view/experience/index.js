@@ -15,7 +15,7 @@ export default function ClientExperienceAndEducationView({
   educationData,
   experienceData,
 }) {
-  console.log(educationData, experienceData, "experienceData");
+  // console.log(educationData, experienceData, "experienceData");
 
   return (
     <div

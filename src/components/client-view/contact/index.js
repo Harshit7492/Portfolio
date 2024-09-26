@@ -37,7 +37,7 @@ export default function ClientContactView() {
 
   async function handleSendMessage() {
     const res = await addData("contact", formData);
-    console.log(res, 'contact-res');
+    // console.log(res, 'contact-res');
 
     if (res && res.success) {
       setFormData(initialFormData);
@@ -60,7 +60,7 @@ export default function ClientContactView() {
       formData.message !== "";
   };
 
-  console.log(isValidForm(), 'isValidForm()');
+  // console.log(isValidForm(), 'isValidForm()');
 
   return (
     <div
