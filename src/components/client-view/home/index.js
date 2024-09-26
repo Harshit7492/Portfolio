@@ -113,9 +113,9 @@ export default function ClientHomeView({ data }) {
               {data && data.length ? data[0]?.summary : null}
             </p>
             <motion.div className="flex gap-3 cursor-pointer">
-              {socialIcons.map((item) => (
+              {socialIcons.map((item, index) => (
                 <motion.div
-                  key={item.id} // Ensure each icon has a unique key
+                  key={index} // Ensure each icon has a unique key
                   initial={{ scale: 0 }}
                   animate={{ rotate: 360, scale: 1 }}
                   transition={{

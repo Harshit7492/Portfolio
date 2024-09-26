@@ -36,7 +36,7 @@ export default function ClientProjectView({ data }) {
             ? data.map((item, index) => (
                 <li
                   className="w-full flex items-stretch cursor-pointer"
-                  key={item.id || index} // Use a unique identifier (item.id) or fallback to index
+                  key={index} // Use a unique identifier (item.id) or fallback to index
                 >
                   <div className="border-2 bg-green-200 w-full relative border-green-400 transition-all rounded-lg flex flex-col">
                     <div className="flex p-4 flex-col xl:flex-row w-full items-stretch xl:items-center">

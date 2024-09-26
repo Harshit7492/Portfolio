@@ -28,9 +28,9 @@ const menuItems = [
 ];
 
 function CreateMenus({ activeLink, getMenuItems, setActiveLink }) {
-  return getMenuItems.map((item) => (
+  return getMenuItems.map((item, index) => (
     <LinkScroll
-      key={item.id} // Add unique key for each menu item
+      key={index} // Add unique key for each menu item
       activeClass="active"
       to={item.id}
       spy={true}

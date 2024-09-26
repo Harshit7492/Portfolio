@@ -228,9 +228,9 @@ export default function AdminView() {
   return (
     <div className="border-b border-gray-200">
       <nav className="-mb-0.5 flex justify-center spcae-x-6" role="tablist">
-        {menuItems.map((item) => (
+        {menuItems.map((item, index) => (
           <button
-            key={item.id}
+            key={index}
             type="button"
             className="p-4 font-bold text-xl text-black"
             onClick={() => {

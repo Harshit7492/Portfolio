@@ -85,9 +85,9 @@ export default function ClientContactView() {
         <div className="container px-5">
           <div className="w-full">
             <div className="flex flex-wrap -m-2">
-              {controls.map((controlItem) =>
+              {controls.map((controlItem, index) =>
                 controlItem.name === "message" ? (
-                  <div key={controlItem.name} className="p-2 w-full"> {/* Add key here */}
+                  <div key={index} className="p-2 w-full"> {/* Add key here */}
                     <div className="relative">
                       <label className="text-sm text-[#000]">
                         {controlItem.label}
@@ -107,7 +107,7 @@ export default function ClientContactView() {
                     </div>
                   </div>
                 ) : (
-                  <div key={controlItem.name} className="p-2 w-full"> {/* Add key here */}
+                  <div key={index} className="p-2 w-full"> {/* Add key here */}
                     <div className="relative">
                       <label className="text-sm text-[#000]">
                         {controlItem.label}
