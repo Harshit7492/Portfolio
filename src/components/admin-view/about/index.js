@@ -10,19 +10,19 @@ const controls = [
     label: "About Me",
   },
   {
-    name: "noofprojects",
+    name: "noOfProjects",
     placeholder: "No of projects",
     type: "text",
     label: "Enter no of projects",
   },
   {
-    name: "yearofexperience",
+    name: "yearOfExperience",
     placeholder: "No of experience",
     type: "text",
     label: "Enter no of experience",
   },
   {
-    name: "noofclients",
+    name: "noOfClients",
     placeholder: "No of clients",
     type: "text",
     label: "Enter no of clients",

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { SiLeetcode, SiCodechef } from "react-icons/si";
 import { LiaHackerrank } from "react-icons/lia";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import aiImage from "../../../assets/ai-image.jpg";
 
 function variants() {

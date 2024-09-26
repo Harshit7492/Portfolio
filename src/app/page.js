@@ -15,13 +15,14 @@ async function extractAllDatas(currentSection) {
   });
 
   const data = await res.json();
-  
+
   return data && data.data;
 }
 
 export default async function Home() {
   const homeSectionData = await extractAllDatas("home");
   const aboutSectionData = await extractAllDatas("about");
+  console.log(aboutSectionData, "aboutSectionData")
   const experienceSectionData = await extractAllDatas("experience");
   const educationSectionData = await extractAllDatas("education");
   const projectSectionData = await extractAllDatas("project");
@@ -29,6 +30,7 @@ export default async function Home() {
   return (
     <div>
       <ClientHomeView data={homeSectionData} />
+      <ClientAboutView data={aboutSectionData} />
       <ClientExperienceAndEducationView
         educationData={educationSectionData}
         experienceData={experienceSectionData}

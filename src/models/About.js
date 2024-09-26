@@ -3,9 +3,9 @@ import mongoose from "mongoose";
 const AboutSchema = new mongoose.Schema(
   {
     aboutme: String,
-    noofprojects: String,
-    yearofexperience: String,
-    noofclients: String,
+    noOfProjects: String,
+    yearOfExperience: String,
+    noOfClients: String,
     skills: String,
   },
   { timestamps: true }

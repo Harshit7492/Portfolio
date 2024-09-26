@@ -17,9 +17,9 @@ const initialHomeFormData = {
 
 const initialAboutFormData = {
   aboutme: "",
-  noofprojects: "",
-  yearofexperience: "",
-  noofclients: "",
+  noOfProjects: "",
+  yearOfExperience: "",
+  noOfClients: "",
   skills: "",
 };
 

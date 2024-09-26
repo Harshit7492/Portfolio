@@ -3,8 +3,8 @@
 import { useMemo } from "react";
 import AnimationWrapper from "../animation-wrapper"; // Custom animation wrapper component
 import { motion } from "framer-motion"; // Animation library
-import Image from "next/image"; // Image component from Next.js
-// import aboutMeImage from '../../../../assets/about-image.png' 
+import Image from "next/legacy/image"; // Image component from Next.js
+import aboutMeImage from '../../../assets/about-image.png'
 
 // Function to define animation variants
 function variants() {
@@ -35,7 +35,7 @@ const skillItemVariant = {
 
 // Main component definition
 export default function ClientAboutView({ data }) {
-  // console.log(data, "aboutdata"); // Logging data for debugging
+  console.log(data, "aboutdata");
 
   // Use useMemo to memoize the animation variants
   const setVariants = useMemo(() => variants(), []);
@@ -43,18 +43,19 @@ export default function ClientAboutView({ data }) {
   // Array holding information about the client
   const aboutDataInfo = [
     {
-      label: "Client",
-      value: data?.noofclients || "0", // Fallback to "0" if no data
+      label: "Clients",
+      value: data[0].noofclients || "0",  // Ensure "Clients" label matches the data field
     },
     {
       label: "Projects",
-      value: data?.noofprojects || "0",
+      value: data[0].noofprojects || "0",
     },
     {
       label: "Experience",
-      value: data?.yearofexperience || "0",
+      value: data[0].yearofexperience || "0",
     },
   ];
+  console.log(aboutDataInfo, 'aboutDataInfo')
 
   // Heading text for the component
   const headingText = "Why Hire Me For Your Next Project ?";
@@ -69,17 +70,16 @@ export default function ClientAboutView({ data }) {
           {aboutDataInfo.map((infoItem, index) => (
             <motion.div
               className={`flex items-center justify-start
-                ${
-                  index === 0
-                    ? "sm:justify-start"
-                    : index === 1
+                ${index === 0
+                  ? "sm:justify-start"
+                  : index === 1
                     ? "sm:justify-center"
                     : "sm:justify-end"
                 } py-4 sm:py-6 w-8/12 px-4 sm:w-auto mx-auto sm:mx-0`}
               key={index} // Adding a unique key for each item
               custom={{ duration: 2 + index }} // Custom animation duration
               variants={setVariants} // Applying animation variants
-            > 
+            >
               <div className="flex m-0 w-40 sm:w-auto">
                 <div className="flex flex-col">
                   <p className="text-[50px] text-green-400 font-bold">
@@ -92,7 +92,7 @@ export default function ClientAboutView({ data }) {
               </div>
             </motion.div>
           ))}
-        </AnimationWrapper> 
+        </AnimationWrapper>
       </div>
 
       {/* Animation wrapper for heading and description */}
@@ -108,10 +108,10 @@ export default function ClientAboutView({ data }) {
               </span>
             ))}
           </h1>
-          <p className="text-[#000] mt-4 mb-8 font-bold">{data?.aboutme}</p>
+          <p className="text-[#000] mt-4 mb-8 font-bold">{data[0].aboutme}</p>
         </div>
-      </AnimationWrapper> 
-      
+      </AnimationWrapper>
+
       <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-2 gap-8">
         <AnimationWrapper className="flex border-green-950 w-full">
           <motion.div variants={setVariants} className="h-full w-full p-4">
@@ -125,14 +125,14 @@ export default function ClientAboutView({ data }) {
             />
           </motion.div>
         </AnimationWrapper>
-        
+
         {/* Animation wrapper for skills section */}
         <AnimationWrapper className={"flex items-center w-full p-4"}>
           <motion.div
             variants={setVariants}
             className="grid gap-4 grid-cols-3 h-full max-h-[200px] w-full"
           >
-            {data?.skills.split(",").map((skill, index) => (
+            {data[0].skills ? data[0].skills.split(",").map((skill, index) => (
               <motion.div
                 className="w-full flex justify-center items-center"
                 variants={skillItemVariant}
@@ -142,8 +142,11 @@ export default function ClientAboutView({ data }) {
                   {skill} {/* Displaying the skill */}
                 </button>
               </motion.div>
-            ))}
+            )) : (
+              <p>No skills available.</p> // Fallback content if no skills are present
+            )}
           </motion.div>
+
         </AnimationWrapper>
       </div>
     </div>
